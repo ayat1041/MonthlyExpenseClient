@@ -11,8 +11,9 @@ import {
 } from "@fluentui/react-components";
 import { Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
-import { GrLogin } from "react-icons/gr";
+import { FiLogIn } from "react-icons/fi";
 import { CgMenuRight } from "react-icons/cg";
+import { IconContext } from "react-icons";
 
 const Navbar = () => {
   const contents = (
@@ -56,7 +57,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <nav className="flex items-center justify-between w-full bg-red-700 text-white text-xl py-2 px-4 sticky top-0">
+    <nav className="flex z-50 items-center justify-between w-full bg-red-700 text-white text-xl py-2 px-4 sticky top-0">
       <div className="text-white text-bold">
         <span className="text-2xl font-medium">P</span>lanner
         <span className="text-2xl font-medium">A</span>gent
@@ -67,9 +68,11 @@ const Navbar = () => {
       <div className="hidden md:flex ml-2">
         <Popover>
           <PopoverTrigger disableButtonEnhancement>
+          {/* <IconContext.Provider value={{ color: "white", className: "global-class-name" }}> */}
             <div>
-              <GrLogin className="text-2xl" color="white" />
+              <FiLogIn className="text-2xl text-slate-100"/>
             </div>
+            {/* </IconContext.Provider> */}
           </PopoverTrigger>
 
           <PopoverSurface>

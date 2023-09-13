@@ -9,11 +9,12 @@ import {
 } from "@fluentui/react-components";
 import { Tooltip } from "@fluentui/react-components";
 import { CalendarMonthRegular } from "@fluentui/react-icons";
-import { IoMdAdd,IoMdDoneAll } from "react-icons/io"
+import { IoMdDoneAll } from "react-icons/io";
+import CreatePlan from "./components/CreatePlan";
 
 const Plans = () => {
   return (
-    <div className="flex">
+    <div className="flex flex-col items-center justify-center">
       <Helmet>
         <title>Monthly Plan</title>
       </Helmet>
@@ -42,7 +43,7 @@ const Plans = () => {
             </MenuList>
           </MenuPopover>
         </Menu>
-        <MenuItem>
+        {/* <MenuItem>
               <Tooltip content="Create a plan" relationship="label">
                 <Button
                   size="large"
@@ -52,18 +53,18 @@ const Plans = () => {
                   Create a Plan
                 </Button>
               </Tooltip>
-            </MenuItem>
+            </MenuItem> */}
         <MenuItem>
-              <Tooltip content="Completed plans" relationship="label">
-                <Button
-                  size="large"
-                  icon={<IoMdDoneAll />}
-                  iconPosition="after"
-                >
-                  Completed Plans
-                </Button>
-              </Tooltip>
-            </MenuItem>
+          <CreatePlan />
+        </MenuItem>
+
+        <MenuItem>
+          <Tooltip content="Completed plans" relationship="label">
+            <Button size="large" icon={<IoMdDoneAll />} iconPosition="after">
+              Completed Plans
+            </Button>
+          </Tooltip>
+        </MenuItem>
       </div>
     </div>
   );
